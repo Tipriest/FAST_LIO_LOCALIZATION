@@ -12,12 +12,14 @@
     <param name="filter_size_map" type="double" value="0.5" />
     <param name="cube_side_length" type="double" value="1000" />
     <param name="runtime_pos_log_enable" type="bool" value="0" />
-    <param name="pcd_save_enable" type="bool" value="0" />
+    <param name="pcd_save_enable" type="bool" value="1" />
     <node pkg="fast_lio_localization" type="fastlio_mapping_localization" name="laserMapping" output="screen" /> 
 
 
-	<arg name="map" default="$(find fast_lio_localization)/PCD/beijing_office.pcd" />
-	<!-- loalization-->
+	<!-- <arg name="map" default="$(find fast_lio_localization)/PCD/beijing_office.pcd" /> -->
+    <arg name="map" default="$(find fast_lio_localization)/PCD/beijing_office2.pcd" />
+
+    <!-- loalization-->
     <node pkg="fast_lio_localization" type="global_localization.py" name="global_localization" output="screen" />
 
 	<!-- transform  fusion-->
